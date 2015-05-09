@@ -13,5 +13,14 @@
         <item>Item 4</item>
     </string-array>
     <string name="title_activity_workout_list">Workout List</string>
+    <string name="title_db_test">Database Test</string>
+    <string name="db_button">DB Test</string>
+    <string name="id_text">ID</string>
+    <string name="workoutName_text">Workout Name</string>
+    <string name="dbResult_text">Database Results</string>
+    <string name="addButText">ADD</string>
+    <string name="deleteButText">DELETE</string>
+    <string name="updateButText">UPDATE</string>
+    <string name="findButText">FIND</string>
 
 </resources>

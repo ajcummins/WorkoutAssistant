@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.ycp.cs482.workoutassistant" >
 
+    <!-- Min API Version : 15 (Android 4.0.3) -->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -19,6 +20,14 @@
         <activity
             android:name=".WorkoutListActivity"
             android:label="@string/title_activity_workout_list"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.ycp.cs482.workoutassistant.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DBTestActivity"
+            android:label="@string/title_db_test"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -8,6 +8,24 @@ public class Workout {
     private int id;
     private String workoutname;
 
+    /*
+    Have to record the units of the workout
+    Time/Distance
+    Weight/Rep
+
+    Have to record Muscle Group
+    private enum muscleGroup
+        -> Upper Body, Core, Lower Body
+        OR
+        -> Shoulders, Back, Arms, Legs, Core, Chest
+
+    Record Muscle's worked
+
+    arraylist enum muscelsEngaged
+
+    pectoral, bicep, tricep...
+     */
+
     public Workout(){
 
     }
@@ -17,7 +35,7 @@ public class Workout {
         this.workoutname = inWorkoutName;
     }
 
-    public void SetID(int inId){
+    public void setID(int inId){
         this.id = inId;
     }
 

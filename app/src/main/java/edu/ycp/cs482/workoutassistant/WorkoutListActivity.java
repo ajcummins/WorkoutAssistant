@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-
 public class WorkoutListActivity extends ListActivity {
 
     @Override
@@ -57,4 +56,5 @@ public class WorkoutListActivity extends ListActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 }

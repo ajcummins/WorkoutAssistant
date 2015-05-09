@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".DBTestActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/id_text"
+        android:id="@+id/idText"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/workoutName_text"
+        android:id="@+id/woText"
+        android:layout_below="@+id/idEditText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/idEditText"
+        android:layout_below="@+id/idText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/woEditText"
+        android:inputType="text"
+        android:layout_below="@+id/woText"
+        android:layout_alignLeft="@+id/woText"
+        android:layout_alignStart="@+id/woText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/id_text"
+        android:id="@+id/textView"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/dbResultLabel"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/workoutName_text"
+        android:id="@+id/textView2"
+        android:layout_marginTop="29dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/dbResult_text"
+        android:id="@+id/dbResultLabel"
+        android:layout_below="@+id/woEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:singleLine="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/idResultText"
+        android:layout_alignTop="@+id/textView"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/woResultText"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignLeft="@+id/idResultText"
+        android:layout_alignStart="@+id/idResultText" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/addButText"
+        android:id="@+id/dbAddBut"
+        android:layout_marginBottom="26dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/dbDelBut"
+        android:onClick="addWorkout" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/deleteButText"
+        android:id="@+id/dbDelBut"
+        android:layout_alignTop="@+id/dbAddBut"
+        android:layout_alignLeft="@+id/dbResultLabel"
+        android:layout_alignStart="@+id/dbResultLabel"
+        android:layout_toLeftOf="@+id/woResultText"
+        android:layout_toStartOf="@+id/woResultText"
+        android:onClick="deleteWorkout"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/findButText"
+        android:id="@+id/dbFindBut"
+        android:layout_alignTop="@+id/dbUpBut"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/dbUpBut"
+        android:layout_toEndOf="@+id/dbUpBut"
+        android:onClick="findWorkout"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/updateButText"
+        android:id="@+id/dbUpBut"
+        android:layout_alignTop="@+id/dbDelBut"
+        android:layout_alignRight="@+id/dbResultLabel"
+        android:layout_alignEnd="@+id/dbResultLabel"
+        android:layout_toRightOf="@+id/dbDelBut"
+        android:layout_toEndOf="@+id/dbDelBut"
+        android:onClick="updateWorkout"/>
+
+</RelativeLayout>

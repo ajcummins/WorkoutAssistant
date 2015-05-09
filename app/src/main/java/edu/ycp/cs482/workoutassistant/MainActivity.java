@@ -15,6 +15,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
     }
 
 
@@ -46,5 +47,12 @@ public class MainActivity extends ActionBarActivity {
         Intent intent = new Intent(this, WorkoutListActivity.class);
         // Start the new activity
         startActivity(intent);
+    }
+
+    public void goToDBTest(View view){
+        // Create intent and start new activity
+        Intent intent = new Intent(this, DBTestActivity.class);
+        startActivity(intent);
+
     }
 }
