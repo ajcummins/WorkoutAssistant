@@ -33,6 +33,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="edu.ycp.cs482.workoutassistant.MainActivity" />
         </activity>
+
+        <provider
+            android:name=".provider.woAppContentProvider"
+            android:authorities="edu.ycp.cs482.workoutassistant.provider.woAppContentProvider"
+            android:enabled="true"
+            android:exported="true" >
+        </provider>
     </application>
 
 </manifest>
