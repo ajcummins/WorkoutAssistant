@@ -4,15 +4,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="main_greeting">Workout Assistant Main Menu</string>
-    <string name="list_button_string">Workout List</string>
-
-    <string-array name="list_array">
-        <item>Item 1</item>
-        <item>Item 2</item>
-        <item>Item 3</item>
-        <item>Item 4</item>
-    </string-array>
-    <string name="title_activity_workout_list">Workout List</string>
+    <string name="list_button_string">View Workout List</string>
+    <string name="add_results_but">Add Workout Results</string>
+    <string name="title_activity_workout_list">View Workout List</string>
     <string name="title_db_test">Database Test</string>
     <string name="db_button">DB Test</string>
     <string name="id_text">ID : </string>
@@ -24,5 +18,7 @@
     <string name="updateButText">UPDATE</string>
     <string name="findButText">FIND</string>
     <string name="title_activity_view_wo">ViewWOActivity</string>
+    <string name="title_activity_woresults">Workout Results</string>
+    <string name="title_activity_add_results">Add Workout Results</string>
 
 </resources>

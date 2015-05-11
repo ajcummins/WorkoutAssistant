@@ -49,6 +49,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ViewWOListActivity" />
         </activity>
+        <activity
+            android:name=".WOResultsActivity"
+            android:label="@string/title_activity_woresults"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.ycp.cs482.workoutassistant.MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddResultsActivity"
+            android:label="@string/title_activity_add_results"
+            android:parentActivityName=".WOResultsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.ycp.cs482.workoutassistant.WOResultsActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -14,23 +14,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.SimpleCursorAdapter;
 
 import edu.ycp.cs482.workoutassistant.provider.woAppContentProvider;
 
-public class ViewWOListActivity extends ListActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+
+public class WOResultsActivity extends ListActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     // Intent Extra
-    public final static String EXTRA_WO_ID = "edu.ycp.cs482.workoutassistant.VIEWWOID";
+    public final static String EXTRA_RESULT_WO_ID = "edu.ycp.cs482.workoutassistant.RESULTWOID";
 
     // Adapter to display list data
     SimpleCursorAdapter myAdapter;
@@ -52,7 +47,7 @@ public class ViewWOListActivity extends ListActivity implements LoaderManager.Lo
 
         // create progress bar
         ProgressBar progressBar = new ProgressBar(this);
-        progressBar.setLayoutParams(new LinearLayout.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT,Gravity.CENTER));
+        progressBar.setLayoutParams(new LinearLayout.LayoutParams(ActionBar.LayoutParams.WRAP_CONTENT, ActionBar.LayoutParams.WRAP_CONTENT, Gravity.CENTER));
 
         progressBar.setIndeterminate(true);
         getListView().setEmptyView(progressBar);
@@ -72,8 +67,6 @@ public class ViewWOListActivity extends ListActivity implements LoaderManager.Lo
 
         // Setup the loader. Reconnect to existing or start a new loader
         getLoaderManager().initLoader(0,null,this);
-
-        setContentView(R.layout.activity_workout_list);
     }
 
 
@@ -121,9 +114,10 @@ public class ViewWOListActivity extends ListActivity implements LoaderManager.Lo
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
         // Use the id given from the item to open the workout view.
-        Intent intent = new Intent(this, ViewWOActivity.class);
+        Intent intent = new Intent(this, AddResultsActivity.class);
         String viewWOID = Integer.toString((int) id);
-        intent.putExtra(EXTRA_WO_ID,viewWOID);
+        intent.putExtra(EXTRA_RESULT_WO_ID,viewWOID);
         startActivity(intent);
     }
+
 }
