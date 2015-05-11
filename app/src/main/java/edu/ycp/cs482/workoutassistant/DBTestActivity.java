@@ -94,7 +94,7 @@ public class DBTestActivity extends ActionBarActivity{
         boolean success;
 
         // if the fields are not empty, add them to a Workout object and call the handler
-        if(!woNameBox.getText().toString().isEmpty() && !woIDBox.getText().toString().isEmpty()){
+        if(!woNameBox.getText().toString().isEmpty()){
             tempWO.setWorkoutName(woNameBox.getText().toString());
             success = handler.addWorkout(tempWO);
             // Use the boolean to tell if the operation completed or not.

@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WorkoutListActivity"
+            android:name=".ViewWOListActivity"
             android:label="@string/title_activity_workout_list"
             android:parentActivityName=".MainActivity" >
             <meta-data
@@ -40,6 +40,15 @@
             android:enabled="true"
             android:exported="true" >
         </provider>
+
+        <activity
+            android:name=".ViewWOActivity"
+            android:label="@string/title_activity_view_wo"
+            android:parentActivityName=".ViewWOListActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ViewWOListActivity" />
+        </activity>
     </application>
 
 </manifest>

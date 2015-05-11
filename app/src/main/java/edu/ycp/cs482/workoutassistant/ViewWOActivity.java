@@ -1,28 +1,48 @@
 package edu.ycp.cs482.workoutassistant;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.TextView;
 
 
-public class MainActivity extends ActionBarActivity {
+public class ViewWOActivity extends ActionBarActivity {
+
+    private TextView woIDResult;
+    private TextView woNameResult;
+
+    private DBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_view_wo);
 
+        // Obtain view objects
+        woIDResult = (TextView) findViewById(R.id.woViewIDResult);
+        woNameResult = (TextView) findViewById(R.id.woViewNameResult);
 
+        // Use the ID passed from the intent to load the workout data
+        Intent intent = getIntent();
+
+        int inID = Integer.parseInt(intent.getStringExtra(ViewWOListActivity.EXTRA_WO_ID));
+
+        // Use the dbHandler to obtain the workout data
+        dbHandler = new DBHandler(this);
+        Workout inWO = dbHandler.findWorkout(inID);
+
+        woIDResult.setText("" + inWO.getID());
+        woNameResult.setText(inWO.getWorkoutName());
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_view_wo, menu);
         return true;
     }
 
@@ -39,20 +59,5 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    // Called when user clicks Workout List Button
-    public void goToList(View view){
-        // Create intent to start new activity
-        Intent intent = new Intent(this, ViewWOListActivity.class);
-        // Start the new activity
-        startActivity(intent);
-    }
-
-    public void goToDBTest(View view){
-        // Create intent and start new activity
-        Intent intent = new Intent(this, DBTestActivity.class);
-        startActivity(intent);
-
     }
 }
